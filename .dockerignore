@@ -1,0 +1,14 @@
+# El bundle sin comprimir (≈ 820 MB) no entra en la imagen; va territorial_canonical_unified.json.gz
+*.json
+data/
+.git
+.env
+.env.*
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.md
+Dockerfile
+.dockerignore
+docker-compose.yml

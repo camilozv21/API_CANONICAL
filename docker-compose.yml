@@ -1,0 +1,16 @@
+# API territorial canónica.   docker compose up --build   →   http://127.0.0.1:8001/docs
+# El motor agronómico (backend_hackathon/Motor_agronomico) incluye este archivo en su propio compose.
+# Los datos van dentro de la imagen (territorial_canonical_unified.json.gz).
+services:
+  canonica:
+    build: .
+    image: api-canonica:local
+    # Para probar otro bundle sin reconstruir la imagen (también acepta .json sin comprimir):
+    # environment:
+    #   TERRITORIAL_JSON: /data/bundle.json
+    # volumes:
+    #   - ./territorial_canonical_unified.json:/data/bundle.json:ro
+    ports:
+      # Sin autenticación: solo se publica en la máquina local. El motor la usa por la red interna.
+      - "127.0.0.1:${CANONICA_PORT:-8001}:8000"
+    restart: unless-stopped

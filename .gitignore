@@ -1,0 +1,17 @@
+# Bundle sin comprimir (~820 MB): supera el límite de 100 MB de GitHub.
+# Se versiona territorial_canonical_unified.json.gz, que es lo que usa el Dockerfile.
+territorial_canonical_unified.json
+data/
+
+# Entorno y secretos
+.env
+.env.*
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
